@@ -1,18 +1,21 @@
-/* sarahmreiter.com — chart-paper research aesthetic */
+/* sarahmreiter.com — palette C "Kelp and brass": green-black ink, kelp, brass, chart paper */
 :root {
-  --ink: #0B1F2E;
-  --ink-2: #33475A;
-  --ink-3: #5E6F7E;
-  --paper: #F4F1EA;
-  --paper-2: #EAE5DA;
-  --card: #FBF9F4;
-  --line: #D5CEBF;
-  --tide: #0F5465;
-  --tide-2: #1C7487;
-  --buoy: #C26A2E;
-  --on-dark: #EAF0F2;
-  --on-dark-2: #A9BAC4;
-  --deep: #0B1F2E;
+  --ink: #1B2621;      /* green-black ink */
+  --ink-2: #3E4A43;
+  --ink-3: #5F6B63;
+  --paper: #F5F2EA;    /* chart paper */
+  --paper-2: #ECE7DB;
+  --card: #FBF9F3;
+  --line: #D8D1C1;
+  --tide: #3D5A40;     /* kelp */
+  --tide-2: #4E7352;
+  --buoy: #A87B2D;     /* brass */
+  --on-dark: #EEF0E8;
+  --on-dark-2: #B5BFB3;
+  --on-dark-accent: #CDA85E;  /* brass on dark sections */
+  --on-dark-link: #DCC28A;
+  --on-dark-fine: #8E9A90;
+  --deep: #17201B;     /* dark sections and footer */
   --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --wrap: 1120px;
@@ -20,15 +23,15 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ink: #E6ECEF; --ink-2: #B9C6CE; --ink-3: #8C9DA8;
-    --paper: #0A1822; --paper-2: #10222E; --card: #0F202B; --line: #22394A;
-    --tide: #5FB3C4; --tide-2: #7CC6D4; --buoy: #E08A4E; --deep: #06121A;
+    --ink: #E8EBE3; --ink-2: #BCC5BA; --ink-3: #909B91;
+    --paper: #111814; --paper-2: #17201B; --card: #151D18; --line: #2A362E;
+    --tide: #8DB38F; --tide-2: #A6C8A7; --buoy: #D2A75A; --deep: #0B110D;
   }
 }
 :root[data-theme="dark"] {
-  --ink: #E6ECEF; --ink-2: #B9C6CE; --ink-3: #8C9DA8;
-  --paper: #0A1822; --paper-2: #10222E; --card: #0F202B; --line: #22394A;
-  --tide: #5FB3C4; --tide-2: #7CC6D4; --buoy: #E08A4E; --deep: #06121A;
+  --ink: #E8EBE3; --ink-2: #BCC5BA; --ink-3: #909B91;
+  --paper: #111814; --paper-2: #17201B; --card: #151D18; --line: #2A362E;
+  --tide: #8DB38F; --tide-2: #A6C8A7; --buoy: #D2A75A; --deep: #0B110D;
 }
 
 * { box-sizing: border-box; }
@@ -93,9 +96,9 @@ section { padding: 88px 0; }
 @media (max-width: 600px) { section { padding: 56px 0; } }
 .section-alt { background: var(--paper-2); }
 .dark { background: var(--deep); color: var(--on-dark); }
-.dark .eyebrow { color: #7CC6D4; }
+.dark .eyebrow { color: var(--on-dark-accent); }
 .dark p, .dark .lede { color: var(--on-dark-2); }
-.dark a { color: #9AD3DF; }
+.dark a { color: var(--on-dark-link); }
 .section-head { max-width: 46em; margin-bottom: 48px; }
 
 /* Hero */
@@ -188,12 +191,12 @@ form.inquiry textarea { min-height: 140px; }
 /* Footer */
 .site-footer { background: var(--deep); color: var(--on-dark-2); padding: 64px 0 28px; font-size: 15px; }
 .site-footer a { color: var(--on-dark); text-decoration: none; }
-.site-footer a:hover { color: #9AD3DF; }
-.site-footer .eyebrow { color: #7CC6D4; }
+.site-footer a:hover { color: var(--on-dark-link); }
+.site-footer .eyebrow { color: var(--on-dark-accent); }
 .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1.4fr; gap: 40px; }
 .footer-name { font-family: var(--serif); font-size: 1.3rem; color: var(--on-dark); margin-bottom: .3em; }
 .footer-links { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin-bottom: 6px; }
-.site-footer .fine { color: #7F93A0; }
+.site-footer .fine { color: var(--on-dark-fine); }
 .copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); }
 @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr; } }
