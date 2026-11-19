@@ -64,6 +64,13 @@ def main():
                 .replace("{{nav}}", nav_html(meta.get("nav", "")))
                 .replace("{{banner}}", BANNER if PREVIEW else "")
                 .replace("{{content}}", body))
+        # Relative links, so the site works at any address
+        # (sarahmreiter.com or the GitHub preview under /sarahmreiter.com/)
+        prefix = "../" * (len(rel.parts) - 1)
+        html = re.sub(r'(href|src)="/"', rf'\1="{prefix}index.html"', html)
+        html = re.sub(r'(href|src)="/(?!/)', rf'\1="{prefix}', html)
+        if PREVIEW:
+            html = html.replace("<head>", '<head>\n<meta name="robots" content="noindex">', 1)
         out = ROOT / rel
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(html)
