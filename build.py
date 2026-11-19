@@ -27,8 +27,8 @@ NAV = [
     ("about", "/about.html", "About"),
 ]
 
-BANNER = ('<div class="preview-banner">Preview: content is a draft pending '
-          'review. Items marked [CV] or [SARAH] are placeholders.</div>')
+BANNER = ('<aside class="preview-banner" aria-label="Preview notice">Preview: '
+          'this site is a draft pending final review.</aside>')
 
 
 def parse(text):
