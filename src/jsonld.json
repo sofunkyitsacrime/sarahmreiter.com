@@ -1,0 +1,136 @@
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://sarahmreiter.com/#person",
+   "name": "Sarah M. Reiter",
+   "url": "https://sarahmreiter.com/",
+   "jobTitle": "Ocean policy and regulatory strategist",
+   "description": "Oceanographer and J.D. (ocean and coastal law) whose research has contributed to International Seabed Authority deliberations on the Clarion-Clipperton Zone and informed negotiations of the BBNJ Agreement. Not a licensed attorney.",
+   "alumniOf": [
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "United States Naval Academy"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "College of Charleston"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Vermont Law School"
+    }
+   ],
+   "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "degree",
+    "name": "Juris Doctor (J.D.), cum laude, Ocean & Coastal Law",
+    "recognizedBy": {
+     "@type": "CollegeOrUniversity",
+     "name": "Vermont Law School"
+    }
+   },
+   "affiliation": [
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Vermont Law and Graduate School"
+    },
+    {
+     "@type": "ResearchOrganization",
+     "name": "Oxford Seascape Ecology Lab, University of Oxford"
+    }
+   ],
+   "memberOf": {
+    "@type": "Organization",
+    "name": "Massport Blue Edge Advisory Committee"
+   },
+   "knowsAbout": [
+    "Oceanography",
+    "Ocean and coastal law and policy",
+    "Law of the sea",
+    "BBNJ Agreement (High Seas Treaty)",
+    "International Seabed Authority and deep-seabed mining",
+    "IMO Polar Code",
+    "Cumulative impacts in environmental review",
+    "Marine spatial planning",
+    "Ocean commitments under the Paris Agreement"
+   ],
+   "award": [
+    "Air Force Achievement Medal (2007)",
+    "Navy Achievement Medal (2005)",
+    "United States Naval Academy Leadership Award (2005)"
+   ],
+   "sameAs": [
+    "https://www.linkedin.com/in/sarah-reiter-13056b31/"
+   ]
+  },
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://sarahmreiter.com/#practice",
+   "name": "Sarah M. Reiter",
+   "url": "https://sarahmreiter.com/",
+   "description": "Ocean policy and regulatory strategy for frontier ocean technology, offshore energy permitting and environmental review, international ocean governance (BBNJ, IMO, ISA), science review for counsel, and policy strategy for funders. Not a law firm; does not give legal advice.",
+   "founder": {
+    "@id": "https://sarahmreiter.com/#person"
+   },
+   "email": "hello@sarahmreiter.com",
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Advisory services",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Frontier technology regulatory strategy",
+       "url": "https://sarahmreiter.com/services.html#frontier"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Permitting and environmental review strategy",
+       "url": "https://sarahmreiter.com/services.html#permitting"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "International ocean governance",
+       "url": "https://sarahmreiter.com/services.html#governance"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Science review for counsel",
+       "url": "https://sarahmreiter.com/services.html#translation"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Policy strategy for funders and agencies",
+       "url": "https://sarahmreiter.com/services.html#funders"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://sarahmreiter.com/#website",
+   "url": "https://sarahmreiter.com/",
+   "name": "Sarah M. Reiter",
+   "publisher": {
+    "@id": "https://sarahmreiter.com/#person"
+   },
+   "inLanguage": "en-US"
+  }
+ ]
+}

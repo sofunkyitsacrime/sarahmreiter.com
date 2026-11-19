@@ -20,8 +20,8 @@ PREVIEW = True  # shows the "preview" banner; set False at launch
 
 NAV = [
     ("services", "/services.html", "Advisory"),
-    ("frontier", "/frontier.html", "Frontier Tech"),
-    ("record", "/track-record.html", "Track Record"),
+    ("frontier", "/frontier.html", "Frontier tech"),
+    ("record", "/track-record.html", "Track record"),
     ("insights", "/insights.html", "Insights"),
     ("speaking", "/speaking.html", "Speaking"),
     ("about", "/about.html", "About"),
@@ -52,6 +52,8 @@ def nav_html(active):
 
 def main():
     layout = (SRC / "layout.html").read_text()
+    jsonld = (SRC / "jsonld.json").read_text()
+    jsonld_tag = '<script type="application/ld+json">\n' + jsonld + '\n</script>\n</head>'
     count = 0
     for page in sorted((SRC / "pages").rglob("*.html")):
         meta, body = parse(page.read_text())
@@ -66,10 +68,22 @@ def main():
                 .replace("{{content}}", body))
         # Relative links, so the site works at any address
         # (sarahmreiter.com or the GitHub preview under /sarahmreiter.com/)
-        prefix = "../" * (len(rel.parts) - 1)
-        html = re.sub(r'(href|src)="/"', rf'\1="{prefix}index.html"', html)
-        html = re.sub(r'(href|src)="/(?!/)', rf'\1="{prefix}', html)
-        if PREVIEW:
+        # The 404 page is served at any missing path, so it keeps root-absolute links.
+        is_article = rel.parts[0] == "insights" and len(rel.parts) > 1
+        if is_article:
+            html = html.replace('<meta property="og:type" content="website">',
+                                '<meta property="og:type" content="article">', 1)
+        if rel.name == "404.html":
+            # Served at any missing path: no canonical, root-absolute links kept.
+            html = re.sub(r'<link rel="canonical"[^>]*>\n?', '', html)
+            html = re.sub(r'<meta property="og:url"[^>]*>\n?', '', html)
+        else:
+            html = html.replace("</head>", jsonld_tag, 1)
+            # Home links go to the directory ("./" or "../"), matching the canonical "/".
+            prefix = "../" * (len(rel.parts) - 1)
+            html = re.sub(r'(href|src)="/"', rf'\1="{prefix or "./"}"', html)
+            html = re.sub(r'(href|src)="/(?!/)', rf'\1="{prefix}', html)
+        if PREVIEW or rel.name == "404.html":
             html = html.replace("<head>", '<head>\n<meta name="robots" content="noindex">', 1)
         out = ROOT / rel
         out.parent.mkdir(parents=True, exist_ok=True)

@@ -1,42 +1,44 @@
 <!--meta
 title: Contact | Sarah M. Reiter
-description: Start a conversation about ocean law and policy advisory, urgent permitting or litigation support, or speaking.
+description: Contact Sarah M. Reiter about advisory work, a time-sensitive permitting matter, science support for counsel in litigation or agency challenges, or speaking.
 nav: contact
 -->
 <section class="page-hero">
   <div class="wrap">
     <p class="eyebrow">Contact</p>
-    <h1>Start a conversation.</h1>
-    <p class="lede">Choose the route that fits, so your note reaches the right place.</p>
+    <h1>Tell me what you're deciding.</h1>
+    <p class="lede">A few lines on the decision and its deadline are enough to start.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap grid g3 routes">
-    <div class="card"><p class="tag">Time-sensitive</p><h3>Urgent permitting or litigation</h3><p>A filing deadline, comment period, agency request or active case. Response within one business day.</p><a class="btn" href="?route=urgent#form">Urgent matter</a></div>
-    <div class="card"><p class="tag">Advisory</p><h3>Briefing, project or retainer</h3><p>Frontier technology strategy, permitting readiness, governance or funder strategy. Starts with a 30-minute call.</p><a class="btn" href="?route=advisory#form">Advisory inquiry</a></div>
-    <div class="card"><p class="tag">Events &amp; press</p><h3>Speaking or media</h3><p>Conferences, panels, CLE sessions, interviews and commentary.</p><a class="btn" href="?route=speaking#form">Speaking or media</a></div>
+    <div class="card"><p class="tag">Time-sensitive</p><h3>A deadline is running</h3><p>A comment period, an agency request or a filing date. Or science support for counsel in litigation or an agency challenge. Put the date in the timeline field.</p><a class="btn" href="?route=urgent#form">Time-sensitive matter</a></div>
+    <div class="card"><p class="tag">Advisory</p><h3>Briefing, project or retainer</h3><p>Frontier technology, permitting, treaty exposure or funder strategy. It starts with a 30-minute call.</p><a class="btn" href="?route=advisory#form">Advisory inquiry</a></div>
+    <div class="card"><p class="tag">Events &amp; press</p><h3>Speaking or media</h3><p>Conferences, panels, investor or law-firm briefings, interviews.</p><a class="btn" href="?route=speaking#form">Speaking or media</a></div>
   </div>
 </section>
 
 <section class="section-alt" id="form">
   <div class="wrap">
-    <form id="inquiry" class="inquiry" data-to="hello@sarahmreiter.com">
+    <form id="inquiry" class="inquiry" action="https://formspree.io/f/meagzdyp" method="POST">
+      <input type="hidden" name="_subject" value="New inquiry from sarahmreiter.com">
+      <p class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
       <label>Route
         <select name="route">
           <option value="advisory">Advisory: briefing, project or retainer</option>
-          <option value="urgent">Urgent: permitting or litigation</option>
+          <option value="urgent">Time-sensitive: permitting deadline or litigation science support</option>
           <option value="speaking">Speaking or media</option>
-          <option value="checklist">Send me the Regulatory Readiness checklist</option>
         </select>
       </label>
       <label>Name <input name="name" required autocomplete="name"></label>
       <label>Organization <input name="org" autocomplete="organization"></label>
       <label>Email <input name="email" type="email" required autocomplete="email"></label>
-      <label>Timeline <input name="timeline" placeholder="e.g. comment period closes 15 Jan"></label>
+      <label>Timeline <input name="timeline" placeholder="e.g. comment period closes Jan. 15"></label>
       <label>What decision are you facing? <textarea name="message" required></textarea></label>
-      <p class="fine">Please don't send confidential information until we've spoken. Sending this message does not create a client relationship.</p>
+      <p class="fine">I hold a J.D. but am not a licensed attorney, and nothing here is legal advice. Sending this message does not create an attorney–client relationship. Please don't send confidential information until we've spoken.</p>
       <div><button class="btn" type="submit">Send</button></div>
+      <p id="inquiry-status" class="form-status" role="status" aria-live="polite" hidden></p>
     </form>
   </div>
 </section>
