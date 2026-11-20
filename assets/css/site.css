@@ -197,7 +197,7 @@ form.inquiry textarea { min-height: 140px; }
 .site-footer a { color: var(--on-dark); text-decoration: none; }
 .site-footer a:hover { color: var(--on-dark-link); }
 .site-footer .eyebrow { color: var(--on-dark-accent); }
-.footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1.4fr; gap: 40px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
 .footer-name { font-family: var(--serif); font-size: 1.3rem; color: var(--on-dark); margin-bottom: .3em; }
 .footer-links { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin-bottom: 6px; }
