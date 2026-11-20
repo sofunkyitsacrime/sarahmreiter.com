@@ -257,3 +257,8 @@ h2.h3, .h3 { font-size: 1.32rem; font-weight: 600; letter-spacing: -0.01em; line
 .service h3.sub { font-family: var(--sans); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--tide); margin: 1.4em 0 .5em; font-weight: 600; }
 :focus-visible { outline: 2px solid var(--buoy); outline-offset: 3px; }
 .photo .byline { color: var(--on-dark-2); }
+
+/* About: headshot */
+.headshot { margin: 0; justify-self: end; width: 100%; max-width: 324px; }
+.headshot img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 0 var(--line); }
+@media (max-width: 860px) { .headshot { justify-self: start; max-width: 260px; } }
