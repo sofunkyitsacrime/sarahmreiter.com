@@ -54,6 +54,14 @@ def main():
     layout = (SRC / "layout.html").read_text()
     jsonld = (SRC / "jsonld.json").read_text()
     jsonld_tag = '<script type="application/ld+json">\n' + jsonld + '\n</script>\n</head>'
+    # Cache-busting: stamp CSS/JS links with a short content hash so browsers
+    # fetch new versions right after each push (GitHub Pages caches for 10 min).
+    import hashlib
+    stamp = {f: hashlib.md5((ROOT / f).read_bytes()).hexdigest()[:8]
+             for f in ("assets/css/site.css", "assets/js/site.js")}
+    layout = (layout
+              .replace('/assets/css/site.css"', '/assets/css/site.css?v=' + stamp["assets/css/site.css"] + '"')
+              .replace('/assets/js/site.js"', '/assets/js/site.js?v=' + stamp["assets/js/site.js"] + '"'))
     count = 0
     for page in sorted((SRC / "pages").rglob("*.html")):
         meta, body = parse(page.read_text())
